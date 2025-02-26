@@ -63,10 +63,10 @@ public class maze {
         if(r>1) {
             x.addAll(countDirection(p+'D',r-1,c));
         }
-
         if(c>1) {
             x.addAll(countDirection(p+'R',r,c-1));
         }
         return x;
     }
+
 }
