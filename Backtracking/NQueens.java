@@ -4,56 +4,52 @@ import java.util.Arrays;
 
 public class NQueens {
     public static void main(String[] args) {
-
         boolean[][] board = new boolean[4][4];
-        System.out.println(nQueens(board,0));
+        System.out.println(Queens(board,0));
     }
-    public static int nQueens(boolean[][] arr,int r ){
-        if(r==arr.length){
-            //all the queens are placed
-            DisplayBoard(arr);
+    public static int Queens(boolean[][] board, int r){
+        if(r == board.length){
+            displayQueens(board);
             System.out.println();
             return 1;
-        }int count =0;
-        //this for loop is for traversing the column
-        for(int i = 0 ; i < arr.length ;i++){
-            if(isSafe(arr,r,i)){
-                arr[r][i] = true;
-                count += nQueens(arr,r+1);
-                arr[r][i] = false;
+        }
+        int count=0;
+        for(int i = 0 ; i < board[0].length ; i++){
+            if(isSafe(board , r, i)){
+                board[r][i] = true;
+                count+=Queens(board,r+1);
+                board[r][i] = false;
             }
         }
         return count;
     }
-
-    private static boolean isSafe(boolean[][] arr, int r, int c) {
-        for(int i = 0 ; i < r ; i++){
-            if(arr[i][c]){
+    public static boolean isSafe(boolean[][] board , int r , int c){
+        for(int i = 0 ; i < r ; i ++){
+            if(board[i][c]){
                 return false;
             }
         }
         int maxLeft = Math.min(r,c);
-        for(int i =0 ; i<=maxLeft ; i++){
-            if(arr[r-i][c-i]) return false;
+        for(int i = 0 ; i <= maxLeft ; i++){
+            if(board[r-i][c-i]) return false;
         }
-        int maxRight = Math.min(r,arr.length - c -1);
-        for(int i = 0 ; i <= maxRight; i++){
-            if(arr[r-i][c+i]) return false ;
+        int maxRight = Math.min(r,board.length - c - 1);
+        for(int i = 0 ; i <= maxRight ; i++ ){
+            if(board[r-i][c+i]) return false;
         }
         return true;
     }
-
-    private static void DisplayBoard(boolean[][] arr) {
-        for(boolean[] row : arr){
-            for(boolean element : row){
-                if(element){
-                    System.out.print("Q ");
+    public static void displayQueens(boolean[][] board){
+        for(boolean[] row : board){
+            for (boolean elements : row){
+                if(elements){
+                    System.out.print('Q'+" ");
                 }
                 else{
-                    System.out.print("X ");
+                    System.out.print('X'+" ");
                 }
             }
-        System.out.println();
+            System.out.println();
         }
     }
 }
