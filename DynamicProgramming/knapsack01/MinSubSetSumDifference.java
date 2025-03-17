@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package DynamicProgramming.knapsack01;
 import java.util.*;
 
 public class MinSubSetSumDifference {
@@ -9,9 +9,7 @@ public class MinSubSetSumDifference {
             ts+=x; // ts = 10
         }
         int totalSum = ts; // Store original sum
-        if(ts%2==0) ts = ts/2; // ts = 10 ====> ts = 5
-        else ts = (ts+1)/2;
-
+        ts = ts/2; // ts = 10 ====> ts = 5
         List<Integer> qualifiers = new ArrayList<>();
         for(int i = 0 ; i <= ts ; i++){ // i ==> 0 - ts  i.e      i=0 to i=5
             if(subsetSum(arr , i , arr.length)){ // qualifiers => 0+ 1+ 2+ 3+      not qualifies => 4- 5-
