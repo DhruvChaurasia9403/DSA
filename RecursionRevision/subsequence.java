@@ -6,7 +6,7 @@ public class subsequence {
         List<String> p = new ArrayList<>();
 //        List<List<String>> result = new ArrayList<>();
 //        subSeqList(p,"123",result);
-        System.out.println(subseqIt("abc"));
+        subseqSum(0,"123");
     }
     // printing the list of subsequence
     public static void subseq(String p , String up){
@@ -19,7 +19,7 @@ public class subsequence {
         subseq(p,up.substring(1));
     }
 
-    //print the list of list of the subsequence
+    //print the list of(list of) the subsequence
     public static void subSeqList(List<String> p, String up, List<List<String>> result) {
         if (up.isEmpty()) {
             result.add(new ArrayList<>(p));
@@ -62,4 +62,16 @@ public class subsequence {
         return outer;
     }
 
+
+
+    // what if we were to return the sum of subset
+    public static void subseqSum(int p , String up){
+        if(up.isEmpty()){
+            System.out.println(p);
+            return;
+        }
+        int ch = Character.getNumericValue(up.charAt(0));
+        subseqSum(p+ch,up.substring(1));
+        subseqSum(p,up.substring(1));
+    }
 }

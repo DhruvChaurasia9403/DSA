@@ -3,7 +3,7 @@ package DynamicProgramming;
 public class subsetSum {
     public static void main(String[] args) {
         int arr[] = {2,3,7,8,10};
-        int target_sum = 11;
+        int target_sum = 10;
         int n = arr.length;
         boolean dp[][] = new boolean [n+1][target_sum+1];
         for(int i = 0 ; i <= n ; i++){
@@ -45,4 +45,5 @@ public class subsetSum {
         }
         return dp[n][sum];
     }
+
 }
