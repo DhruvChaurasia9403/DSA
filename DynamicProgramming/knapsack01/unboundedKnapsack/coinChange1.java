@@ -1,4 +1,4 @@
-package unboundedKnapsack;
+package DynamicProgramming.knapsack01.unboundedKnapsack;
 
 public class coinChange1 {
     //leetcode coin change
