@@ -1,4 +1,4 @@
-package DynamicProgramming.knapsack01.unboundedKnapsack;
+package DynamicProgramming.unboundedKnapsack;
 
 import java.util.Arrays;
 

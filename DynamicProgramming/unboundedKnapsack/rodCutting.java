@@ -1,4 +1,4 @@
-package DynamicProgramming.knapsack01.unboundedKnapsack;
+package DynamicProgramming.unboundedKnapsack;
 
 public class rodCutting {
     public static void main(String[] args) {

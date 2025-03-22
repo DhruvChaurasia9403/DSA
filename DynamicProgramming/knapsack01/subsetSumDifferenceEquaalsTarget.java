@@ -1,7 +1,5 @@
 package DynamicProgramming.knapsack01;
 
-import java.util.*;
-
 public class subsetSumDifferenceEquaalsTarget {
 
     // This is way 1 of doing the question

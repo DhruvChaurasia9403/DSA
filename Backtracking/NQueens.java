@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class NQueens {
     public static void main(String[] args) {
-        boolean[][] board = new boolean[4][4];
+        boolean[][] board = new boolean[5][5];
         System.out.println(Queens(board,0));
     }
     public static int Queens(boolean[][] board, int r){
@@ -24,7 +24,7 @@ public class NQueens {
         return count;
     }
     public static boolean isSafe(boolean[][] board , int r , int c){
-        for(int i = 0 ; i < r ; i ++){
+        for(int i = 0 ; i < r ; i++){
             if(board[i][c]){
                 return false;
             }
