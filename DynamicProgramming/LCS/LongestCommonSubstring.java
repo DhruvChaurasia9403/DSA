@@ -4,7 +4,8 @@ public class LongestCommonSubstring {
     public static void main(String[] args) {
         String a = "abcde";
         String b = "abfce";
-        lcs(a,b);
+        //we are suppose to return 2 here as a:"ab" & b:"ab" max = 2
+        System.out.println(lcs(a,b));
     }
     public static int lcs(String a , String b){
         int n = a.length();
