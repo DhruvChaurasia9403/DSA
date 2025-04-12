@@ -13,7 +13,7 @@ public class treeDFS {
         if(node== null) return ;
         System.out.print(node.val+" ");
         preorder(node.left);
-        preorder(node.right);
+        preorder(node.right );
     }
     public static void postorder(TreeNode node){
         if(node== null) return ;
