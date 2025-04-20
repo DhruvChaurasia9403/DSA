@@ -22,23 +22,21 @@ public class printLCS {
             }
         }
         int i = n , j = m;
-        String x = "";
+        StringBuilder x = new StringBuilder();
         while(i>0&&j>0){
-            if(a.charAt(i-1)==b.charAt(j-1)){
-                x = x + a.charAt(i-1);
+            if(a.charAt(i-1) == b.charAt(j-1)){
+                x = x.append(a.charAt(i-1));
                 i--;
                 j--;
             }
             else {
-                if (dp[i - 1][j] > dp[i][j - 1]) {
+                if(dp[i-1][j] > dp[i][j-1]) {
                     i--;
                 } else {
                     j--;
                 }
             }
         }
-        StringBuilder sb = new StringBuilder(x);
-        sb = sb.reverse();
-        return sb.toString();
+        return x.reverse().toString();
     }
 }
