@@ -8,7 +8,9 @@ public class minNoOfInsertionsAndDeletions {
         if(word1==word2) return 0;
         int a = word1.length();
         int b = word2.length();
-        return a+b-2*lcs(word1,word2);
+        int deletions = a-lcs(word1,word2);
+        int insertions = b-lcs(word1,word2);
+        return deletions+insertions;
     }
     public static int lcs(String a , String b){
         int n = a.length();
