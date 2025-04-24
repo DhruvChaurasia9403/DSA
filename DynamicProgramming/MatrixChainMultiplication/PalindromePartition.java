@@ -10,6 +10,7 @@ public class PalindromePartition {
         int ans = solve(s,0,s.length()-1,dp);
         System.out.println(ans==Integer.MAX_VALUE ? 0 : ans);;
     }
+    //this is memoized code but still this can be improved only 1010/1111 test cases passed
     static int solve(String s , int i , int j,int[][] dp ){
         if(i>j) return 0;
         if(dp[i][j]!=-1) return dp[i][j];
