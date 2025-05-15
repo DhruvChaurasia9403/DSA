@@ -3,28 +3,27 @@ import java.util.*;
 
 public class levelOrder {
     static class Node{
-        int val ;
-        Node left , right;
+        Node right;
+        Node left;
+        int val;
         Node(int val){
             this.val = val;
-            left=right=null;
         }
     }
     public static List<List<Integer>> LO(Node node){
-        if(node==null) return new ArrayList<List<Integer>>();
         Queue<Node> open = new LinkedList<>();
         List<List<Integer>> close = new ArrayList<>();
         open.offer(node);
         while(!open.isEmpty()){
-            int n = open.size();
-            List<Integer> sub = new ArrayList<>();
-            for(int i = 0 ; i < n ; i++){
-                Node current = open.poll();
-                if(current.left != null) open.offer(current.left);
-                if(current.right != null) open.offer(current.right);
-                sub.add(current.val);
+            int size = open.size();
+            List<Integer> wrap = new ArrayList<>();
+            for(int i = 0; i < size ; i++ ){
+                Node curr = open.poll();
+                if(curr.left != null) open.offer(curr.left);
+                if(curr.right != null) open.offer(curr.right);
+                wrap.add(curr.val);
             }
-            close.add(sub);
+            close.add(wrap);
         }
         return close;
     }
