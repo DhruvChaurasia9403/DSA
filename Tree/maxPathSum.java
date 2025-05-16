@@ -20,8 +20,8 @@ public class maxPathSum {
     }
     public static int maxPS(Node node , int sum){
         if(node == null) return 0;
-        int l = maxPS(node.left,sum);
-        int r = maxPS(node.right,sum);
+        int l = Math.max(0,maxPS(node.left,sum));
+        int r = Math.max(0,maxPS(node.right,sum));
         sum = Math.max(sum , l+r + node.val);
         return Math.max(l,r)+node.val;
     }
