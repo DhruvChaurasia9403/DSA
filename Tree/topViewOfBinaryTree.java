@@ -45,10 +45,11 @@ public class topViewOfBinaryTree {
                 if(curr.node.right!=null) q.offer(new pair(curr.level+1,curr.node.right));
             }
         }
-        for(int x : temp.values()){
-            ls.add(x);
+        for(Map.Entry<Integer,Integer> entry : temp.entrySet()){
+            ls.add(entry.getValue());
         }
         return ls;
     }
+
 
 }
