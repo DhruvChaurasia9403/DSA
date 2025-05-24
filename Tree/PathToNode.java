@@ -9,6 +9,7 @@ public class PathToNode {
             this.val = val;
         }
     }
+    // this code prints path to the particular or targeted node
     public static boolean path(Node node,List<Integer> ls,int valueOfNode){
         if(node==null) return false;
         ls.add(node.val);
