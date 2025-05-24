@@ -19,4 +19,16 @@ public class PathToNode {
         ls.remove(ls.size()-1);
         return false;
     }
+
+
+
+    //This code prints the path to the leaf node
+    public static void pathToNode(Node node , List<Integer> ls , List<List<Integer>> res){
+        if(node == null) return ;
+        ls.add(node.val);
+        if(node.left!=null) pathToNode(node.left , ls , res);
+        if(node.right!=null) pathToNode(node.right , ls, res);
+        if(node.left==null&&node.right==null) res.add(new ArrayList<>(ls));
+        ls.remove(ls.size()-1);
+    }
 }
