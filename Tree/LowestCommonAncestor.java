@@ -14,6 +14,9 @@ public class LowestCommonAncestor {
         node.right.right.left = new Node(9);
         node.right.right.right = new Node(10);
 
+
+
+        //this is brute force approach
         List<Integer> ls1 = new ArrayList<>();
         List<Integer> ls2 = new ArrayList<>();
         path(node,ls1,6);
