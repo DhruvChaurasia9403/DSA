@@ -8,7 +8,8 @@ public class mazeWithAllPaths {
                             {true ,true ,true},
                             {true ,true ,true}};
         int[][] path = new int[3][3];
-        allPaths4("",maze,0,0,path,0);
+//        allPaths4("",maze,0,0,path,0);
+        allPaths3("",maze,0,0);
     }
 
 
@@ -67,27 +68,39 @@ public class mazeWithAllPaths {
 
 
 
-    public static void allPaths3(String p , boolean[][] maze , int r , int c){
-        if(r==maze.length-1 && c == maze[0].length-1){
+    public static void allPaths3(String p , boolean[][] maze , int r, int c){
+        if(r==maze.length-1 && c==maze[0].length-1){
             System.out.println(p);
             return;
         }
-        if(!maze[r][c]) return ;
-        maze[r][c] = false;
-        if(r>0) allPaths3(p+'U',maze , r-1,c);
-        if(r<maze.length-1) allPaths3(p+'D',maze,r+1,c);
-        if(c>0) allPaths3(p+'L',maze,r, c-1);
-        if(c<maze[0].length-1) allPaths3(p+'R',maze,r,c+1);
-        //here the function calls will end
-        maze[r][c]=true; // Unmarked as non visited
+        maze[r][c]=false;
+        if(r>0&&maze[r-1][c]) allPaths3(p+"U",maze,r-1,c);
+        if(r<maze.length-1&&maze[r+1][c]) allPaths3(p+"D",maze,r+1,c);
+        if(c>0&&maze[r][c-1]) allPaths3(p+"L",maze,r,c-1);
+        if(c<maze[0].length-1&&maze[r][c+1]) allPaths3(p+"R",maze,r,c+1);
+        maze[r][c] = true;
     }
 
 
+//    public static void allPaths3(String p , boolean[][] maze , int r , int c){
+//        if(r==maze.length-1 && c == maze[0].length-1){
+//            System.out.println(p);
+//            return;
+//        }
+//        if(!maze[r][c]) return ;
+//        maze[r][c] = false;
+//        if(r>0) allPaths3(p+'U',maze , r-1,c);
+//        if(r<maze.length-1) allPaths3(p+'D',maze,r+1,c);
+//        if(c>0) allPaths3(p+'L',maze,r, c-1);
+//        if(c<maze[0].length-1) allPaths3(p+'R',maze,r,c+1);
+//        //here the function calls will end
+//        maze[r][c]=true; // Unmarked as non visited
+//    }
 
     // let's print the path too
 
 
-    public static void allPaths4(String p , boolean[][] maze , int r , int c ,int[][]path , int step){
+    public static void allPaths4(String p ,  boolean[][] maze , int r , int c ,int[][]path , int step){
         if(r==maze.length-1 && c == maze[0].length-1){
             for(int[] pa : path){
                 System.out.println(Arrays.toString(pa));

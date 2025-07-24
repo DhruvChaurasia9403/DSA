@@ -17,7 +17,7 @@ public class Permutations {
         for(int i = 0 ; i <= p.length() ; i++){
             String l = p.substring(0,i);
             String r = p.substring(i);
-            permute(l+ch+r,up.substring(1));
+            permute(l+ch+r , up.substring(1));
         }
     }
     public static List<String> permuteList(String p , String up){
