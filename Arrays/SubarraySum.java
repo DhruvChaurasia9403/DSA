@@ -39,9 +39,21 @@ public class SubarraySum {
         return count;
     }
 
-
-
+    //this is most optimal sol^n with time complexity O(n)
     public static int ss2(int[] nums, int k){
-
+        int count = 0;
+        int[] p = new int[nums.length];
+        p[0] = nums[0];
+        for(int i = 1 ; i < nums.length ; i++){
+            p[i] = p[i-1]+nums[i];
+        }
+        Map<Integer,Integer> mp = new HashMap<>();
+        for(int num : p){
+            if(num == k) count++;
+            int val = num-k;
+            if(mp.containsValue(val)) count+=mp.getOrDefault(val,0);
+            mp.put(num,mp.getOrDefault(num,0)+1);
+        }
+        return count;
     }
 }

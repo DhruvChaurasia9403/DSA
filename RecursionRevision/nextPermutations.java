@@ -5,5 +5,7 @@ public class nextPermutations {
     public static void main(String[] args) {
 
     }
-    public static List<Integer> nextPermutation(int)
+//    public static List<Integer> nextPermutation(int c){
+//
+//    }
 }
