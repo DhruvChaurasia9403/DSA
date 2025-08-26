@@ -7,5 +7,6 @@ public class slidingWindowSubArrayLessThanK{
         String a = "a";
         String b = "b";
         System.out.println(a+b);
+        System.out.println(2%5);
     }
 }
