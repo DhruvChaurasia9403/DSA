@@ -1,6 +1,7 @@
 package Graph.Matrix_to_list;
 import java.util.*;
 public class converting {
+    // this conversion of matrix is of n X n to adjacency list
     public static ArrayList<ArrayList<Integer>> createList(int[][] arr){
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for(int i = 0 ; i < arr.length ; i++){
