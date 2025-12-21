@@ -8,7 +8,7 @@ public class Knapsack01 {
         int[] val = {2,4,5,7};
         int n = val.length;
         int k = 7;
-        int[][] dp = new int[val.length+1][k+1];
+        int[][] dp = new int[n+1][k+1];
         for(int [] row : dp){
             Arrays.fill(row,-1);
         }
