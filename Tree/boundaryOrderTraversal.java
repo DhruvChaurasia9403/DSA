@@ -25,7 +25,7 @@ public class boundaryOrderTraversal {
     public static void addLeft(Node node,ArrayList<Integer> ls){
         Node curr = node.left;
         while(curr!=null) {
-            if (isLeaf(curr) == false) ls.add(curr.val);
+            if (!isLeaf(curr)) ls.add(curr.val);
             if (curr.left != null) curr = curr.left;
             else curr = curr.right;
         }

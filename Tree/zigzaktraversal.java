@@ -30,6 +30,7 @@ public class zigzaktraversal {
                 wrap.add(curr.val);
             }
             close.add(wrap);
+            flag = !flag;
         }
         return close;
     }
